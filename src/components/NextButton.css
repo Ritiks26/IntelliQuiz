@@ -1,0 +1,19 @@
+.next-question {
+  display: flex;
+  justify-content: center;
+  height: 8vh;
+  width: 100%;
+}
+
+.next-question button {
+  background-color: rgb(0, 0, 0);
+  color: white;
+  font-weight: 500;
+  font-size: 1.05rem;
+  font-family: var(--font1);
+  width: 85%;
+  height: 100%;
+  max-width: 200px;
+  border-radius: 8px;
+  border: none;
+}

@@ -1,0 +1,130 @@
+.link {
+  text-decoration: none;
+  color: black;
+}
+
+.first-interaction {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: start;
+  overflow: hidden;
+}
+
+.greeting-user {
+  font-family: var(--font1);
+  margin-top: 6rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.greeting-user p {
+  font-size: 1.25rem;
+  margin: 0;
+}
+
+.greeting-user h1 {
+  margin: 0;
+}
+
+.start-quiz-button {
+  height: 30px;
+  width: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: general sans;
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  margin-top: 2rem;
+  color: rgb(0, 0, 0);
+  border: 1px solid transparent;
+  background: linear-gradient(white, white) padding-box,
+    conic-gradient(red, blue, red) border-box;
+  border-radius: 36px;
+  cursor: pointer;
+}
+
+.main-pic {
+  margin-top: 0rem;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+}
+
+.main-pic img {
+  max-height: 50%;
+  max-width: 50%;
+  object-fit: contain;
+}
+
+.category-parent-container {
+  min-height: 100vh;
+  width: 100vw;
+  margin-top: 1rem;
+  display: none;
+  overflow: hidden;
+}
+
+.select-category-heading {
+  font-family: general sans;
+  text-align: center;
+  font-size: 1.75rem;
+  margin: 1rem;
+}
+
+.category-container {
+  box-sizing: border-box;
+  font-family: general sans;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.25rem;
+  height: auto;
+  width: 100vw;
+  margin: 0 auto;
+  max-width: 600px;
+}
+
+.category-type {
+  font-size: 1.25rem;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  padding-left: 1rem;
+  gap: 0.5rem;
+  min-height: 60px;
+  height: auto;
+  width: 80%;
+  background-color: transparent;
+  border: 1px solid lightgray;
+  border-radius: 18px;
+  color: black;
+  background-color: transparent;
+}
+
+.category-type:hover {
+  background-color: #7f078a53;
+  border: 1px solid #80078a;
+  color: white;
+}
+
+.svg-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.25rem;
+  border-radius: 50%;
+  background-color: #7f078a43;
+}

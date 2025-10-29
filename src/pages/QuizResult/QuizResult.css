@@ -1,0 +1,138 @@
+@property --clr-1 {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: rgb(255, 255, 255);
+}
+
+@property --clr-2 {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: rgb(208, 98, 255);
+}
+
+@property --clr-3 {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: rgb(179, 0, 255);
+}
+
+@property --glow-deg {
+  syntax: "<angle>";
+  inherits: true;
+  initial-value: 0deg;
+}
+
+@keyframes rotate-clr {
+  100% {
+    --glow-deg: 270deg;
+  }
+}
+
+.scorecard-container {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 2rem;
+  font-family: general sans;
+}
+
+.percentage-obtained-container {
+  min-height: 20vh;
+  width: min(80vw, 300px);
+  padding: 0.75rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.percentage {
+  --gradient-glow: var(--clr-1), var(--clr-1), var(--clr-2), var(--clr-3);
+  width: min(60vw, 200px);
+  height: min(60vw, 200px);
+  border-radius: 50%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid transparent;
+  isolation: isolate;
+  background: linear-gradient(white) padding-box,
+    conic-gradient(from var(--glow-deg), var(--gradient-glow)) border-box;
+}
+
+.percentage::before,
+.percentage::after {
+  content: "";
+  position: absolute;
+  border-radius: inherit;
+}
+
+.percentage::before {
+  background: linear-gradient(white);
+  inset: 0.5rem;
+  z-index: -1;
+  filter: blur(0.75rem);
+}
+
+.percentage::after {
+  inset: -0.25rem;
+  background: conic-gradient(from var(--glow-deg), var(--gradient-glow));
+  z-index: -2;
+  filter: blur(1rem);
+  opacity: 0.5;
+}
+
+.percentage h1 {
+  font-size: clamp(1.75rem, 1.524rem + 1.1299vw, 2.25rem);
+  color: rgb(0, 0, 0);
+  margin: 0;
+}
+
+.score-content {
+  height: 50%;
+  width: 100%;
+  text-align: center;
+  padding: 0.5rem 0;
+}
+
+.quiz-result-category {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.quiz-category {
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.quiz-attempt-container {
+  height: 15%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 0.5px solid rgb(187, 186, 186);
+  border-radius: 12px;
+  margin: 0.75rem 0;
+  padding: 0 1.5rem;
+  color: rgb(0, 0, 0);
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.quiz-attempt-count {
+  font-size: 1rem;
+}
+
+.see-answers {
+  background-color: black;
+  color: white;
+  height: 7vh;
+  width: 90%;
+  font-size: 1rem;
+  font-family: var(--font1);
+  border: none;
+  border-radius: 16px;
+}

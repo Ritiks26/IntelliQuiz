@@ -7,6 +7,7 @@ export function QuizTimer({
   quizData,
   currentQuestion,
   onButtonClick,
+  selectedCategory,
   totalTime = 30,
 }) {
   const [timeLeft, setTimeLeft] = useState(totalTime);
@@ -42,13 +43,13 @@ export function QuizTimer({
   return (
     <>
       <div className="quiz-timer-container">
-        <div className="left-section">
-          <div className="go-back">
-            <Link to={"/"}>
+        <div className="top-section">
+          <Link to={"/"}>
+            <div className="go-back">
               <img src={BackIcon} alt="" />
-            </Link>
-          </div>
-          <div className="category">{quizData[currentQuestion].category}</div>
+            </div>
+          </Link>
+          <div className="category">{selectedCategory}</div>
         </div>
         <div className="time-left">{timeLeft}</div>
       </div>

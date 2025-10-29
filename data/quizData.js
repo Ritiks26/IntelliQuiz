@@ -7,7 +7,7 @@ import financeIcon from "../src/assets/finance.svg";
 
 export const quizData = [
   {
-    category: "Sports",
+    category: "SPORTS",
     iconLink: sportsIcon,
     questions: [
       {
@@ -28,7 +28,7 @@ export const quizData = [
     ],
   },
   {
-    category: "Web Development",
+    category: "WEB DEVELOPMENT",
     iconLink: codingIcon,
     questions: [
       {
@@ -131,7 +131,7 @@ export const quizData = [
     ],
   },
   {
-    category: "Science",
+    category: "SCIENCE",
     iconLink: scienceIcon,
     questions: [
       {
@@ -224,7 +224,7 @@ export const quizData = [
     ],
   },
   {
-    category: "Geopolitics",
+    category: "GEOPOLITICS",
     iconLink: geopoliticsIcon,
     questions: [
       {
@@ -334,7 +334,7 @@ export const quizData = [
     ],
   },
   {
-    category: "Maths",
+    category: "MATHS",
     iconLink: mathsIcon,
     questions: [
       {
@@ -415,7 +415,7 @@ export const quizData = [
     ],
   },
   {
-    category: "Finance",
+    category: "FINANCE",
     iconLink: financeIcon,
     questions: [
       {

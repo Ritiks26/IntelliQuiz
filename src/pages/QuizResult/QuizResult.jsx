@@ -80,7 +80,7 @@ export function QuizResult({ selectedCategory }) {
         <div className="score-content">
           <div className="quiz-result-category">
             <div className="quiz-category">CATEGORY</div>
-            <div className="">{selectedCategory.toUpperCase()}</div>
+            <div className="">{selectedCategory}</div>
           </div>
           <div className="quiz-attempt-container">
             <div>QUIZ ATTEMPT</div>

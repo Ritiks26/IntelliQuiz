@@ -17,7 +17,7 @@ export function QuizReview() {
     <>
       <div className="review-header">
         <div
-          className="back-icon"
+          className="go-back"
           onClick={() => {
             navigate("/quiz-result", {
               state: {

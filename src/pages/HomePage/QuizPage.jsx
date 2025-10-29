@@ -79,6 +79,7 @@ export function QuizPage({
         quizData={selectedQuiz.questions}
         currentQuestion={currentQuestion}
         onButtonClick={currentQuestionHandleClick}
+        selectedCategory={selectedCategory}
       />
       <div className="quiz-container">
         <p className="questions-count">

@@ -1,7 +1,7 @@
 import { gsap } from "gsap";
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
-import cubeImage from "../../assets/cube-3d.png";
+import movingball from "../../assets/moving-ball.jpg";
 import "./SelectCategory.css";
 
 export function SelectCategory({
@@ -12,6 +12,7 @@ export function SelectCategory({
   const navigate = useNavigate();
   const startQuizRef = useRef(null);
   const selectCategoryRef = useRef(null);
+  const ballImgRef = useRef(null);
 
   const startingQuiz = () => {
     gsap.to(startQuizRef.current, {
@@ -39,6 +40,15 @@ export function SelectCategory({
     });
   };
 
+  useEffect(() => {
+    gsap.to(ballImgRef.current, {
+      rotate: "360",
+      repeat: -1,
+      duration: 5,
+      ease: "none",
+    });
+  }, []);
+
   return (
     <>
       <div ref={startQuizRef} className="first-interaction">
@@ -50,7 +60,7 @@ export function SelectCategory({
           START QUIZ
         </div>
         <div className="main-pic">
-          <img src={cubeImage} alt="" />
+          <img ref={ballImgRef} src={movingball} alt="" />
         </div>
       </div>
       <div ref={selectCategoryRef} className="category-parent-container">

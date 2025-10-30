@@ -15,6 +15,7 @@ export function QuizPage({
   const [answer, setAnswer] = useState([]);
   const [score, setScore] = useState(0);
   const [attemptCount, setAttemptCount] = useState(0);
+  const [totalTimeTaken, setTotalTimeTaken] = useState(0);
 
   useEffect(() => {
     setCurrentQuestion(0);
@@ -61,6 +62,8 @@ export function QuizPage({
           answer: updatedAnswers,
           attemptCount: updatedAttempt,
           selectedQuiz,
+          selectedCategory,
+          totalTimeTaken,
         },
       });
       return;
@@ -80,6 +83,9 @@ export function QuizPage({
         currentQuestion={currentQuestion}
         onButtonClick={currentQuestionHandleClick}
         selectedCategory={selectedCategory}
+        onTimeUpdate={() => {
+          setTotalTimeTaken((prev) => prev + 1);
+        }}
       />
       <div className="quiz-container">
         <p className="questions-count">

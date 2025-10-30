@@ -45,7 +45,10 @@ function App() {
           path="/quiz-result"
           element={<QuizResult selectedCategory={selectedCategory} />}
         />
-        <Route path="/quiz-review" element={<QuizReview />} />
+        <Route
+          path="/quiz-review"
+          element={<QuizReview selectCategory={selectedCategory} />}
+        />
 
         <Route path="*" element={<ErrorFile />} />
       </Routes>

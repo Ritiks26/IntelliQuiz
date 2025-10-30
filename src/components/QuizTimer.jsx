@@ -37,7 +37,9 @@ export function QuizTimer({
       document.documentElement.style.setProperty("--smooth", "width 1s linear");
     }, 1000);
 
-    return () => clearInterval(interval);
+    return () => {
+      clearInterval(interval);
+    };
   }, [currentQuestion]);
 
   return (

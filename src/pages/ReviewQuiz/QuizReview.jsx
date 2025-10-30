@@ -7,7 +7,8 @@ export function QuizReview() {
   const location = useLocation();
   const navigate = useNavigate();
   const [currentReviewQuestion, setCurrentReviewQuestion] = useState(0);
-  const { selectedQuiz, answer, attemptCount, score } = location.state;
+  const { selectedQuiz, selectedCategory, answer, attemptCount, score } =
+    location.state;
   const question = selectedQuiz.questions[currentReviewQuestion];
   const userSelectedIndex = answer[currentReviewQuestion];
   const userSelectedOption = question.options[userSelectedIndex];
@@ -32,6 +33,7 @@ export function QuizReview() {
         >
           <img src={backIcon} alt="" />
         </div>
+        <div className="review-page-category">{selectedCategory}</div>
       </div>
       <div className="review-quiz-container">
         <p className="review-questions-count">
@@ -68,31 +70,40 @@ export function QuizReview() {
               }
             )}
           </div>
+          <p
+            style={{
+              margin: "none",
+              padding: "none",
+              color: "#E81919",
+              fontSize: "0.85rem",
+              fontWeight: "500",
+            }}
+          >
+            {!userSelectedIndex ? "*NOT ATTEMPTED" : ""}
+          </p>
         </div>
-        <>
-          <div className="navigate">
-            <button
-              className="previous-button"
-              onClick={() => {
-                if (currentReviewQuestion > 0) {
-                  setCurrentReviewQuestion((prev) => prev - 1);
-                }
-              }}
-            >
-              PREV
-            </button>
-            <button
-              className="next-button"
-              onClick={() => {
-                if (currentReviewQuestion < selectedQuiz.questions.length - 1) {
-                  setCurrentReviewQuestion((prev) => prev + 1);
-                }
-              }}
-            >
-              NEXT
-            </button>
-          </div>
-        </>
+        <div className="navigate">
+          <button
+            className="previous-button"
+            onClick={() => {
+              if (currentReviewQuestion > 0) {
+                setCurrentReviewQuestion((prev) => prev - 1);
+              }
+            }}
+          >
+            PREV
+          </button>
+          <button
+            className="next-button"
+            onClick={() => {
+              if (currentReviewQuestion < selectedQuiz.questions.length - 1) {
+                setCurrentReviewQuestion((prev) => prev + 1);
+              }
+            }}
+          >
+            NEXT
+          </button>
+        </div>
       </div>
     </>
   );

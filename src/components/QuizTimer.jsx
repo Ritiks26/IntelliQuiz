@@ -8,7 +8,8 @@ export function QuizTimer({
   currentQuestion,
   onButtonClick,
   selectedCategory,
-  totalTime = 30,
+  recordTimeSpent,
+  totalTime = 10,
 }) {
   const [timeLeft, setTimeLeft] = useState(totalTime);
 
@@ -19,6 +20,7 @@ export function QuizTimer({
     let currentTime = totalTime;
     const interval = setInterval(() => {
       if (currentTime === 0) {
+        recordTimeSpent(currentQuestion, totalTime);
         onButtonClick(
           quizData[currentQuestion].options,
           quizData[currentQuestion].answer
@@ -38,6 +40,8 @@ export function QuizTimer({
     }, 1000);
 
     return () => {
+      const timeSpent = totalTime - currentTime;
+      recordTimeSpent(currentQuestion, timeSpent);
       clearInterval(interval);
     };
   }, [currentQuestion]);

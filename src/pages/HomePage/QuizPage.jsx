@@ -15,7 +15,7 @@ export function QuizPage({
   const [answer, setAnswer] = useState([]);
   const [score, setScore] = useState(0);
   const [attemptCount, setAttemptCount] = useState(0);
-  const [totalTimeTaken, setTotalTimeTaken] = useState(0);
+  const [totalTimeTaken, setTotalTimeTaken] = useState([]);
 
   useEffect(() => {
     setCurrentQuestion(0);
@@ -28,6 +28,22 @@ export function QuizPage({
   );
 
   const totalQuestions = selectedQuiz.questions.length;
+
+  // const recordTimeSpent = (questionIndex, timeTaken) => {
+  //   let updatedTime = [...totalTimeTaken];
+  //   updatedTime[questionIndex] = timeTaken;
+  //   console.log("updated-time", updatedTime);
+  //   setTotalTimeTaken(updatedTime);
+  // };
+
+  const recordTimeSpent = (questionIndex, timeTaken) => {
+    setTotalTimeTaken((prev) => {
+      const updated = [...prev];
+      updated[questionIndex] = timeTaken;
+      console.log("updated-time", updated);
+      return updated;
+    });
+  };
 
   const currentQuestionHandleClick = (option, answers) => {
     // if (selectedOption === null) {
@@ -50,12 +66,17 @@ export function QuizPage({
       updatedScore += 1;
     }
 
+    // recordTimeSpent(timeTaken);
+
     updatedAnswers[currentQuestion] = selectedOption;
     setAnswer(updatedAnswers);
     setAttemptCount(updatedAttempt);
     setScore(updatedScore);
 
     if (currentQuestion === totalQuestions - 1) {
+      const totalTime = totalTimeTaken.reduce((acc, curr) => acc + curr, 0);
+      console.log("total time:", totalTime);
+
       navigate("/quiz-result", {
         state: {
           score: updatedScore,
@@ -63,7 +84,7 @@ export function QuizPage({
           attemptCount: updatedAttempt,
           selectedQuiz,
           selectedCategory,
-          totalTimeTaken,
+          totalTime,
         },
       });
       return;
@@ -83,9 +104,7 @@ export function QuizPage({
         currentQuestion={currentQuestion}
         onButtonClick={currentQuestionHandleClick}
         selectedCategory={selectedCategory}
-        onTimeUpdate={() => {
-          setTotalTimeTaken((prev) => prev + 1);
-        }}
+        recordTimeSpent={recordTimeSpent}
       />
       <div className="quiz-container">
         <p className="questions-count">

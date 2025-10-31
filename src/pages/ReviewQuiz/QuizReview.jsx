@@ -79,7 +79,7 @@ export function QuizReview() {
               fontWeight: "500",
             }}
           >
-            {!userSelectedIndex ? "*NOT ATTEMPTED" : ""}
+            {userSelectedIndex === null ? "*NOT ATTEMPTED" : ""}
           </p>
         </div>
         <div className="navigate">

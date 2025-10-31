@@ -15,12 +15,13 @@ export function QuizResult({ selectedCategory }) {
     answer,
     attemptCount,
     selectedQuiz,
+    totalTime,
     fromReview = false,
   } = location.state;
 
-  // const minutes = Math.floor(totalTimeTaken / 60);
-  // const seconds = totalTimeTaken % 60;
-  // const formattedTime = `${minutes}M:${seconds.toString().padStart(2, "0")}S`;
+  const minutes = Math.floor(totalTime / 60);
+  const seconds = totalTime % 60;
+  const formattedTime = `${minutes}M:${seconds.toString().padStart(2, "0")}S`;
 
   const totalQuestions = selectedQuiz.questions.length;
   const percentageObtained = Math.round((score / totalQuestions) * 100);
@@ -100,7 +101,7 @@ export function QuizResult({ selectedCategory }) {
           </div>
           <div className="quiz-attempt-container">
             <div>TIME TAKEN</div>
-            <div className="quiz-attempt-count">00M: 00S</div>
+            <div className="quiz-attempt-count">{formattedTime}</div>
           </div>
         </div>
         <button

@@ -9,9 +9,11 @@ export function QuizTimer({
   onButtonClick,
   selectedCategory,
   recordTimeSpent,
-  totalTime = 10,
+  totalTime,
+  setTimeLeft,
+  timeLeft,
 }) {
-  const [timeLeft, setTimeLeft] = useState(totalTime);
+  // const [timeLeft, setTimeLeft] = useState(totalTime);
 
   useEffect(() => {
     setTimeLeft(totalTime);

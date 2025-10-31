@@ -5,14 +5,19 @@ export function NextButton({
   currentQuestion,
   selectedOption,
   onButtonClick,
+  recordTimeSpent,
+  totalTime,
+  timeLeft,
 }) {
   return (
     <div className="next-question">
       <button
         onClick={() => {
+          const timeSpent = totalTime - timeLeft;
           onButtonClick(
             selectedQuiz.questions[currentQuestion].options,
-            selectedQuiz.questions[currentQuestion].answer
+            selectedQuiz.questions[currentQuestion].answer,
+            recordTimeSpent(currentQuestion, timeSpent)
           );
         }}
       >

@@ -30,6 +30,74 @@ export const quizData = [
         options: ["China", "Brazil", "Japan", "USA"],
         answer: "Brazil",
       },
+      {
+        question:
+          "Who won the first Olympic gold medal for India in an individual event?",
+        options: [
+          "Abhinav Bindra",
+          "Neeraj Chopra",
+          "Milkha Singh",
+          "P. T. Usha",
+        ],
+        answer: "Abhinav Bindra",
+      },
+      {
+        question: "How many rings are there in the Olympic logo?",
+        options: ["4", "5", "6", "7"],
+        answer: "5",
+      },
+      {
+        question: "How many overs are played in a standard ODI cricket match?",
+        options: ["20", "40", "50", "60"],
+        answer: "50",
+      },
+      {
+        question: "In which year did India win its first Cricket World Cup?",
+        options: ["1975", "1983", "2011", "1987"],
+        answer: "1983",
+      },
+      {
+        question: "The term “deuce” is used in which sport?",
+        options: ["Tennis", "Football", "Hockey", "Volleyball"],
+        answer: "Tennis",
+      },
+      {
+        question: "Which of the following is not an Olympic sport?",
+        options: ["Surfing", "Chess", "Skateboarding", "Archery"],
+        answer: "Chess",
+      },
+      {
+        question: "Table tennis is also known as?",
+        options: ["Paddle game", "Ping pong", "Soft tennis", "Smash ball"],
+        answer: "Ping pong",
+      },
+      {
+        question: "In baseball, how many strikes make an out?",
+        options: ["2", "3", "4", "5"],
+        answer: "3",
+      },
+      {
+        question: "Neeraj Chopra won gold in which event at the Olympics?",
+        options: ["Discus Throw", "Javelin Throw", "Shot Put", "High Jump"],
+        answer: "Javelin Throw",
+      },
+      {
+        question:
+          "How many players are there in a volleyball team on the court?",
+        options: ["5", "6", "7", "8"],
+        answer: "6",
+      },
+      {
+        question:
+          "Who is the first cricketer to score 100 international centuries?",
+        options: [
+          "Virat Kohli",
+          "Ricky Ponting",
+          "Sachin Tendulkar",
+          "Brian Lara",
+        ],
+        answer: "Sachin Tendulkar",
+      },
     ],
   },
   {

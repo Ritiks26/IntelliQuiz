@@ -16,6 +16,8 @@ export function QuizPage({
   const [score, setScore] = useState(0);
   const [attemptCount, setAttemptCount] = useState(0);
   const [totalTimeTaken, setTotalTimeTaken] = useState([]);
+  const totalTime = 10;
+  const [timeLeft, setTimeLeft] = useState(totalTime);
 
   useEffect(() => {
     setCurrentQuestion(0);
@@ -29,20 +31,11 @@ export function QuizPage({
 
   const totalQuestions = selectedQuiz.questions.length;
 
-  // const recordTimeSpent = (questionIndex, timeTaken) => {
-  //   let updatedTime = [...totalTimeTaken];
-  //   updatedTime[questionIndex] = timeTaken;
-  //   console.log("updated-time", updatedTime);
-  //   setTotalTimeTaken(updatedTime);
-  // };
+  let updatedTime = [...totalTimeTaken];
 
   const recordTimeSpent = (questionIndex, timeTaken) => {
-    setTotalTimeTaken((prev) => {
-      const updated = [...prev];
-      updated[questionIndex] = timeTaken;
-      console.log("updated-time", updated);
-      return updated;
-    });
+    updatedTime[questionIndex] = timeTaken;
+    setTotalTimeTaken(updatedTime);
   };
 
   const currentQuestionHandleClick = (option, answers) => {
@@ -74,7 +67,7 @@ export function QuizPage({
     setScore(updatedScore);
 
     if (currentQuestion === totalQuestions - 1) {
-      const totalTime = totalTimeTaken.reduce((acc, curr) => acc + curr, 0);
+      const totalTime = updatedTime.reduce((acc, curr) => acc + curr, 0);
       console.log("total time:", totalTime);
 
       navigate("/quiz-result", {
@@ -105,6 +98,9 @@ export function QuizPage({
         onButtonClick={currentQuestionHandleClick}
         selectedCategory={selectedCategory}
         recordTimeSpent={recordTimeSpent}
+        totalTime={totalTime}
+        setTimeLeft={setTimeLeft}
+        timeLeft={timeLeft}
       />
       <div className="quiz-container">
         <p className="questions-count">
@@ -136,7 +132,10 @@ export function QuizPage({
           selectedQuiz={selectedQuiz}
           currentQuestion={currentQuestion}
           selectedOption={selectedOption}
+          recordTimeSpent={recordTimeSpent}
           onButtonClick={currentQuestionHandleClick}
+          totalTime={totalTime}
+          timeLeft={timeLeft}
         />
       </div>
     </>

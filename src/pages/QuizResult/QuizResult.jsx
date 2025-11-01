@@ -114,6 +114,7 @@ export function QuizResult({ selectedCategory }) {
                 answer,
                 score,
                 attemptCount,
+                totalTime,
               },
             });
           }}

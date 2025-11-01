@@ -59,8 +59,6 @@ export function QuizPage({
       updatedScore += 1;
     }
 
-    // recordTimeSpent(timeTaken);
-
     updatedAnswers[currentQuestion] = selectedOption;
     setAnswer(updatedAnswers);
     setAttemptCount(updatedAttempt);
@@ -68,7 +66,6 @@ export function QuizPage({
 
     if (currentQuestion === totalQuestions - 1) {
       const totalTime = updatedTime.reduce((acc, curr) => acc + curr, 0);
-      console.log("total time:", totalTime);
 
       navigate("/quiz-result", {
         state: {

@@ -7,8 +7,14 @@ export function QuizReview() {
   const location = useLocation();
   const navigate = useNavigate();
   const [currentReviewQuestion, setCurrentReviewQuestion] = useState(0);
-  const { selectedQuiz, selectedCategory, answer, attemptCount, score } =
-    location.state;
+  const {
+    selectedQuiz,
+    selectedCategory,
+    answer,
+    attemptCount,
+    score,
+    totalTime,
+  } = location.state;
   const question = selectedQuiz.questions[currentReviewQuestion];
   const userSelectedIndex = answer[currentReviewQuestion];
   const userSelectedOption = question.options[userSelectedIndex];
@@ -26,6 +32,7 @@ export function QuizReview() {
                 answer,
                 attemptCount,
                 score,
+                totalTime,
                 fromReview: true,
               },
             });

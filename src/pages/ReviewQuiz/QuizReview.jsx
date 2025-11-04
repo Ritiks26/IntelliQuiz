@@ -23,24 +23,27 @@ export function QuizReview() {
   return (
     <>
       <div className="review-header">
-        <div
-          className="go-back"
-          onClick={() => {
-            navigate("/quiz-result", {
-              state: {
-                selectedQuiz,
-                answer,
-                attemptCount,
-                score,
-                totalTime,
-                fromReview: true,
-              },
-            });
-          }}
-        >
-          <img src={backIcon} alt="" />
+        <div className="top-section-review">
+          <div
+            className="go-back-review"
+            onClick={() => {
+              navigate("/quiz-result", {
+                state: {
+                  selectedQuiz,
+                  answer,
+                  attemptCount,
+                  score,
+                  totalTime,
+                  fromReview: true,
+                },
+              });
+            }}
+          >
+            <img src={backIcon} alt="" />
+          </div>
+
+          <div className="review-page-category">{selectedCategory}</div>
         </div>
-        <div className="review-page-category">{selectedCategory}</div>
       </div>
       <div className="review-quiz-container">
         <p className="review-questions-count">

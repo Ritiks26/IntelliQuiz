@@ -41,7 +41,7 @@
   font-family: general sans;
   font-size: 1rem;
   font-weight: 600;
-  padding: 0.75rem 1.5rem;
+  /* padding: 0.75rem 1.5rem; */
   margin-top: 2rem;
   color: rgb(0, 0, 0);
   border: 1.5px solid transparent;
@@ -63,7 +63,6 @@
   margin-top: 1rem;
 
   /* border-radius: 50%; */
-  /* border: 1px solid; */
 
   &::before {
     content: "";
@@ -80,9 +79,7 @@
 .main-pic img {
   height: 50%;
   width: 50%;
-  object-fit: cover;
-
-  /* border: 1px solid; */
+  object-fit: contain;
 }
 
 /* 2ND ROW */

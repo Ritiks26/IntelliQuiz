@@ -18,7 +18,7 @@ function App() {
   }, [location.pathname]);
 
   return (
-    <>
+    <div className="app-container">
       <Routes>
         <Route
           path="/"
@@ -52,7 +52,7 @@ function App() {
 
         <Route path="*" element={<ErrorFile />} />
       </Routes>
-    </>
+    </div>
   );
 }
 

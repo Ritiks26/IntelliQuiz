@@ -8,6 +8,11 @@ body {
   height: 100vh;
   width: 100%;
   /* background-color: black; */
+
+  @media (width > 500px) {
+    max-width: 400px;
+    margin: 0 auto;
+  }
 }
 
 :root {

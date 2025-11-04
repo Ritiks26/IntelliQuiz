@@ -16,7 +16,7 @@ export function QuizPage({
   const [score, setScore] = useState(0);
   const [attemptCount, setAttemptCount] = useState(0);
   const [totalTimeTaken, setTotalTimeTaken] = useState([]);
-  const totalTime = 10;
+  const totalTime = 30;
   const [timeLeft, setTimeLeft] = useState(totalTime);
 
   useEffect(() => {

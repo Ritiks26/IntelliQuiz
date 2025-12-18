@@ -13,9 +13,9 @@ export function QuizPage({
   const navigate = useNavigate();
   const [selectedOption, setSelectedOption] = useState(null);
   const [answer, setAnswer] = useState([]);
+  const [totalTimeTaken, setTotalTimeTaken] = useState([]);
   const [score, setScore] = useState(0);
   const [attemptCount, setAttemptCount] = useState(0);
-  const [totalTimeTaken, setTotalTimeTaken] = useState([]);
   const totalTime = 30;
   const [timeLeft, setTimeLeft] = useState(totalTime);
 
@@ -60,12 +60,14 @@ export function QuizPage({
     }
 
     updatedAnswers[currentQuestion] = selectedOption;
+
     setAnswer(updatedAnswers);
     setAttemptCount(updatedAttempt);
     setScore(updatedScore);
 
     if (currentQuestion === totalQuestions - 1) {
       const totalTime = updatedTime.reduce((acc, curr) => acc + curr, 0);
+      console.log(totalTime);
 
       navigate("/quiz-result", {
         state: {

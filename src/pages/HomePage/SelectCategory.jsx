@@ -4,11 +4,7 @@ import { useNavigate } from "react-router-dom";
 import movingball from "../../assets/moving-ball.jpg";
 import "./SelectCategory.css";
 
-export function SelectCategory({
-  quizData,
-  selectedCategory,
-  setSelectedCategory,
-}) {
+export function SelectCategory({ quizData, setSelectedCategory }) {
   const navigate = useNavigate();
   const startQuizRef = useRef(null);
   const selectCategoryRef = useRef(null);

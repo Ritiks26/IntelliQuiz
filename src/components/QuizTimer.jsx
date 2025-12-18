@@ -13,8 +13,6 @@ export function QuizTimer({
   setTimeLeft,
   timeLeft,
 }) {
-  // const [timeLeft, setTimeLeft] = useState(totalTime);
-
   useEffect(() => {
     setTimeLeft(totalTime);
     document.documentElement.style.setProperty("--progress-width", "100%");
